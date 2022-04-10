@@ -1,4 +1,4 @@
-# compiladores
+# Compiladores
 Materia: Compiladores.
 ----------------------
 Tarea: Análisis Léxico.
