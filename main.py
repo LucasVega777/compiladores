@@ -8,5 +8,6 @@ if(__name__ == '__main__'):
         codigo = archivo.leer()
         lexema = lexer.getLexema(codigo)
         archivo.escribir(lexema)
+        print("Archivo output.txt generado exitosamente. :)")
     except Exception as error:
         print(error)

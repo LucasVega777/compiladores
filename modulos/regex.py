@@ -49,10 +49,8 @@ class Regex:
 
             for token in re.finditer(token_regex, codigo):
                 tipoLexema = token.lastgroup
-                print('Tipo Lexema:',tipoLexema)
                 valorLexema = token.group()
-                print('Valor Lexema:', valorLexema)
-
+    
                 if(tipoLexema == "NEW_LINE"):
                     numero_linea += 1
                     inicio_linea = token.end()
