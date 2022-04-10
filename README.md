@@ -1,6 +1,8 @@
 # compiladores
 Materia: Compiladores.
+----------------------
 Tarea: Análisis Léxico.
+----------------------
 Integrantes:
 ------------
 * Verónica Domínguez
@@ -9,4 +11,4 @@ Integrantes:
 
 
 Como ejecutar
-    python3 analizadorLexico/lexer/main.py
+    `python3 main.py`
