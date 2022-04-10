@@ -1,11 +1,14 @@
-# compiladores
+# Compiladores
 Materia: Compiladores.
+----------------------
 Tarea: Análisis Léxico.
+----------------------
 Integrantes:
-    - Verónica Domínguez
-    - Lucas Vega
+------------
+* Verónica Domínguez
+* Lucas Vega
 
 
 
 Como ejecutar
-    python3 analizadorLexico/lexer/main.py
+    `python3 main.py`
