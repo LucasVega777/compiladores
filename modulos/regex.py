@@ -2,6 +2,7 @@ from http.client import CONTINUE
 from typing import NamedTuple
 import re
 
+
 class Token(NamedTuple):
     type: str
     value: str
