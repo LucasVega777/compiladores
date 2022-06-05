@@ -1,8 +1,15 @@
 # Compiladores
 Materia: Compiladores.
 ----------------------
-Tarea: Análisis Léxico.
-----------------------
+
+Tarea 1: Análisis Léxico.
+
+Tarea 2: Análisis Sintáctico.
+
+Tarea 3: Traduccion Dirigida por sintaxis.
+
+---------------------
+
 Integrantes:
 ------------
 * Verónica Domínguez
