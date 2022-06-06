@@ -1,4 +1,3 @@
-from http.client import CONTINUE
 from typing import NamedTuple
 import re
 
@@ -29,7 +28,8 @@ class Regex:
             ("PR_TRUE", r'true|TRUE'),
             ("PR_FALSE", r'false|FALSE'),
             ("PR_NULL", r'null|NULL'),
-            ("SKIP", r'[ \t]+')
+            ("SKIP", r'[ \t]+'),
+            ("ESPACIO", r' ')
         ]
       
 

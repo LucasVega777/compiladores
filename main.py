@@ -1,5 +1,6 @@
 from modulos.archivos import Archivo
 from modulos.regex import Regex
+from modulos.analizadorSintactico import analizador
 
 if(__name__ == '__main__'):
     try:
@@ -11,3 +12,6 @@ if(__name__ == '__main__'):
         print("Archivo output.txt generado exitosamente. :)")
     except Exception as error:
         print(error)
+        raise error
+    else:
+       analizador(codigo)
