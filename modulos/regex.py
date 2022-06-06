@@ -1,4 +1,3 @@
-from http.client import CONTINUE
 from typing import NamedTuple
 import re
 
@@ -31,7 +30,7 @@ class Regex:
             ("PR_NULL", r'null|NULL'),
             ("SKIP", r'[ \t]+')
         ]
-      
+        self.tablaTraduccion = []
 
     
     def getLexema (self, codigo):
@@ -47,8 +46,9 @@ class Regex:
             token_regex = '|'.join('(?P<%s>%s)' % par for par in self.componentesLexicos)
             numero_linea = 1 # Numero de linea
             inicio_linea = 0 # Inicio de la lìnea
-
+           
             for token in re.finditer(token_regex, codigo):
+                temporal = {}
                 tipoLexema = token.lastgroup
                 valorLexema = token.group()
     
@@ -56,18 +56,48 @@ class Regex:
                     numero_linea += 1
                     inicio_linea = token.end()
                     resultado += "\n"
+                    temporal = {
+                        "tipoLexema": tipoLexema,
+                        "resultado": "\n",
+                        "token" : valorLexema
+                    }
+                    self.tablaTraduccion.append(temporal)
                     continue
                 elif(tipoLexema == "LITERAL_CADENA"):
                     resultado += "STRING" + " "
+                    temporal = {
+                        "tipoLexema": tipoLexema,
+                        "resultado": "\n",
+                        "token" : valorLexema
+                    }
+                    self.tablaTraduccion.append(temporal)
                     continue
                 elif(tipoLexema == "LITERAL_NUM"):
                     resultado += "NUMBER" + " "
+                    temporal = {
+                        "tipoLexema": tipoLexema,
+                        "resultado": "\n",
+                        "token" : valorLexema
+                    }
+                    self.tablaTraduccion.append(temporal)
                     continue
                 elif(tipoLexema == "SKIP"):
                     resultado += "\t"
+                    temporal = {
+                        "tipoLexema": tipoLexema,
+                        "resultado": "\t",
+                        "token" : valorLexema
+                    }
+                    self.tablaTraduccion.append(temporal)
                     continue
                 elif(tipoLexema in tipos):
                     resultado += tipoLexema + " "
+                    temporal = {
+                        "tipoLexema": tipoLexema,
+                        "resultado": tipoLexema, 
+                        "token" : valorLexema
+                    }
+                    self.tablaTraduccion.append(temporal)
                     continue
                 else:
                     errors.append('Error {} no reconocido en la linea {}'.format(valorLexema, numero_linea))
